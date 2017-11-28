@@ -1,0 +1,6 @@
+target 'DeveloperAlliance' do
+    pod 'RongCloudIM/IMLib', '2.8.0'
+    pod 'RongCloudIM/IMKit', '2.8.0'
+    pod 'RongCloudIM/CallLib', '2.8.0'
+    pod 'RongCloudIM/CallKit', '2.8.0'
+end

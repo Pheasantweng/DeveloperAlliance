@@ -1,0 +1,22 @@
+PODS:
+  - RongCloudIM/CallKit (2.8.0):
+    - RongCloudIM/CallLib
+    - RongCloudIM/IMKit
+  - RongCloudIM/CallLib (2.8.0):
+    - RongCloudIM/IMLib
+  - RongCloudIM/IMKit (2.8.0):
+    - RongCloudIM/IMLib
+  - RongCloudIM/IMLib (2.8.0)
+
+DEPENDENCIES:
+  - RongCloudIM/CallKit (= 2.8.0)
+  - RongCloudIM/CallLib (= 2.8.0)
+  - RongCloudIM/IMKit (= 2.8.0)
+  - RongCloudIM/IMLib (= 2.8.0)
+
+SPEC CHECKSUMS:
+  RongCloudIM: 82a5fcf93027ef2845063e6d5ba77f9f42eb87a5
+
+PODFILE CHECKSUM: 56558c5b6e581ba4b426f9b2152a0a1ad4fe0c1c
+
+COCOAPODS: 1.0.1
