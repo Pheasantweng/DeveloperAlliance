@@ -9,6 +9,7 @@
 #import "FxxAppDelegate.h"
 #import "FxxLoginVC.h"
 #import "BaseNavigationController.h"
+#import "RongyunImMethods.h"
 @interface FxxAppDelegate ()
 
 @end
@@ -18,12 +19,61 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    [[RongyunImMethods sharedInstance]InitSDK];
+
     FxxLoginVC *RootVc=[[FxxLoginVC alloc]init];
     BaseNavigationController *NavRootNav =[[BaseNavigationController alloc]initWithRootViewController:RootVc];
     self.window.rootViewController=NavRootNav;
     [self.window makeKeyWindow];
     [self setNavigationAndTabarForGlobal];
     return YES;
+}
+
+#pragma mark 极光推送相关设置 deviceToken
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+{
+//    [JPUSHService registerDeviceToken:deviceToken];
+    /*容云*/
+    NSString *token =
+    [[[[deviceToken description] stringByReplacingOccurrencesOfString:@"<"
+                                                           withString:@""]
+      stringByReplacingOccurrencesOfString:@">"
+      withString:@""]
+     stringByReplacingOccurrencesOfString:@" "
+     withString:@""];
+    [[RCIMClient sharedRCIMClient] setDeviceToken:token];
+}
+
+#pragma mark 容云推送相关
+
+/**
+ * 推送处理2
+ */
+//注册用户通知设置
+- (void)application:(UIApplication *)application
+didRegisterUserNotificationSettings:
+(UIUserNotificationSettings *)notificationSettings {
+    // register to receive notifications
+    [application registerForRemoteNotifications];
+}
+
+- (void)application:(UIApplication *)application
+didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    // userInfo为远程推送的内容
+    [[RCIMClient sharedRCIMClient] recordRemoteNotificationEvent:userInfo];
+    /**
+     * 获取融云推送服务扩展字段2
+     */
+    NSDictionary *pushServiceData = [[RCIMClient sharedRCIMClient]
+                                     getPushExtraFromRemoteNotification:userInfo];
+    if (pushServiceData) {
+        for (id key in [pushServiceData allKeys]) {
+            
+        }
+    } else {
+        NSLog(@"该远程推送不包含来自融云的推送服务");
+    }
 }
 /*!
  * @abstract 自定义tabBar和导航栏颜色
