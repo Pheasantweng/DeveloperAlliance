@@ -8,6 +8,7 @@
 
 #import "FxxPersonalcenterVC.h"
 #import "FxxDeveloperProfileVC.h"
+#import "FxxBusinesscertificateVC.h"
 @interface FxxPersonalcenterVC ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UIImageView *Image;
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
@@ -74,6 +75,10 @@
                 break;
             case 1:
             {
+                
+                FxxBusinesscertificateVC *Vc =[[FxxBusinesscertificateVC alloc]init];
+                Vc.navigationItem.title=@"商户资质认证";
+                [self.navigationController pushViewController:Vc animated:YES];
             }
                 break;
             case 2:

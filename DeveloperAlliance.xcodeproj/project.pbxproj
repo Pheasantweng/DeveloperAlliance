@@ -59,6 +59,8 @@
 		5B4902641FCF63520003B881 /* IQToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B4902521FCF63520003B881 /* IQToolbar.m */; };
 		5B4902651FCF63520003B881 /* IQUIView+IQKeyboardToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B4902541FCF63520003B881 /* IQUIView+IQKeyboardToolbar.m */; };
 		5B4902661FCF63520003B881 /* IQKeyboardManager.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5B4902571FCF63520003B881 /* IQKeyboardManager.bundle */; };
+		5B49026E1FCF855A0003B881 /* FxxBusinesscertificateVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B49026C1FCF855A0003B881 /* FxxBusinesscertificateVC.m */; };
+		5B49026F1FCF855A0003B881 /* FxxBusinesscertificateVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B49026D1FCF855A0003B881 /* FxxBusinesscertificateVC.xib */; };
 		5B556B9A1FCDEA8700EBBB00 /* FxxChoosetypeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B556B981FCDEA8700EBBB00 /* FxxChoosetypeCell.m */; };
 		5B556B9B1FCDEA8700EBBB00 /* FxxChoosetypeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B556B991FCDEA8700EBBB00 /* FxxChoosetypeCell.xib */; };
 		5B556BA41FCDEAA900EBBB00 /* FxxChoosetypeVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B556B9F1FCDEAA900EBBB00 /* FxxChoosetypeVc.m */; };
@@ -174,6 +176,9 @@
 		5B4902541FCF63520003B881 /* IQUIView+IQKeyboardToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IQUIView+IQKeyboardToolbar.m"; sourceTree = "<group>"; };
 		5B4902551FCF63520003B881 /* KeyboardManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyboardManager.h; sourceTree = "<group>"; };
 		5B4902571FCF63520003B881 /* IQKeyboardManager.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = IQKeyboardManager.bundle; sourceTree = "<group>"; };
+		5B49026B1FCF855A0003B881 /* FxxBusinesscertificateVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FxxBusinesscertificateVC.h; sourceTree = "<group>"; };
+		5B49026C1FCF855A0003B881 /* FxxBusinesscertificateVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FxxBusinesscertificateVC.m; sourceTree = "<group>"; };
+		5B49026D1FCF855A0003B881 /* FxxBusinesscertificateVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FxxBusinesscertificateVC.xib; sourceTree = "<group>"; };
 		5B556B971FCDEA8700EBBB00 /* FxxChoosetypeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FxxChoosetypeCell.h; sourceTree = "<group>"; };
 		5B556B981FCDEA8700EBBB00 /* FxxChoosetypeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FxxChoosetypeCell.m; sourceTree = "<group>"; };
 		5B556B991FCDEA8700EBBB00 /* FxxChoosetypeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FxxChoosetypeCell.xib; sourceTree = "<group>"; };
@@ -240,6 +245,7 @@
 		5B0F0B921FCE1D0800F0D97C /* Personalcenter */ = {
 			isa = PBXGroup;
 			children = (
+				5B4902671FCF85320003B881 /* 商务认证 */,
 				5BB907EB1FCF36A500B20409 /* 填写开发者资料 */,
 				5B0F0B9A1FCE1D4400F0D97C /* model */,
 				5B0F0B9B1FCE1D4400F0D97C /* vc */,
@@ -540,6 +546,40 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		5B4902671FCF85320003B881 /* 商务认证 */ = {
+			isa = PBXGroup;
+			children = (
+				5B4902681FCF85320003B881 /* model */,
+				5B4902691FCF85320003B881 /* vc */,
+				5B49026A1FCF85320003B881 /* view */,
+			);
+			path = "商务认证";
+			sourceTree = "<group>";
+		};
+		5B4902681FCF85320003B881 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		5B4902691FCF85320003B881 /* vc */ = {
+			isa = PBXGroup;
+			children = (
+				5B49026B1FCF855A0003B881 /* FxxBusinesscertificateVC.h */,
+				5B49026C1FCF855A0003B881 /* FxxBusinesscertificateVC.m */,
+				5B49026D1FCF855A0003B881 /* FxxBusinesscertificateVC.xib */,
+			);
+			path = vc;
+			sourceTree = "<group>";
+		};
+		5B49026A1FCF85320003B881 /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
 		5B556B961FCDEA6800EBBB00 /* view */ = {
 			isa = PBXGroup;
 			children = (
@@ -721,6 +761,7 @@
 				5B3FF5721FCCEF0100984DF0 /* Main.storyboard in Resources */,
 				5B0F0BB01FCE1FAB00F0D97C /* FxxPersonalcenterVC.xib in Resources */,
 				5B556BA71FCDEAA900EBBB00 /* FxxLoginVC.xib in Resources */,
+				5B49026F1FCF855A0003B881 /* FxxBusinesscertificateVC.xib in Resources */,
 				5BB907F31FCF36C500B20409 /* FxxDeveloperProfileVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -794,6 +835,7 @@
 				5B49025D1FCF63520003B881 /* IQUIWindow+Hierarchy.m in Sources */,
 				5B0F0BE31FCE2C8B00F0D97C /* UIImage+EMMultiFormat.m in Sources */,
 				5B4902631FCF63520003B881 /* IQTitleBarButtonItem.m in Sources */,
+				5B49026E1FCF855A0003B881 /* FxxBusinesscertificateVC.m in Sources */,
 				5B0F0BAF1FCE1FAB00F0D97C /* FxxPersonalcenterVC.m in Sources */,
 				5B49025F1FCF63520003B881 /* IQKeyboardReturnKeyHandler.m in Sources */,
 				5B4902641FCF63520003B881 /* IQToolbar.m in Sources */,

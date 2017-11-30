@@ -19,32 +19,32 @@
 @end
 
 @implementation FxxLoginVC
-//- (void)viewWillAppear:(BOOL)animated {
-//    [super viewWillAppear:animated];
-//    [self.navigationController setNavigationBarHidden:YES
-//                                             animated:animated];
-//}
-//- (void)viewWillDisappear:(BOOL)animated {
-//    [super viewWillDisappear:animated];
-//    [self.navigationController setNavigationBarHidden:NO
-//                                             animated:animated];
-//}
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES
+                                             animated:animated];
+}
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [self.navigationController setNavigationBarHidden:NO
+                                             animated:animated];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
 #pragma mark 初始化设置
     [self initialization];
-    self.navigationController.delegate = self;
+//    self.navigationController.delegate = self;
 
     // Do any additional setup after loading the view from its nib.
 }
 
-#pragma mark - UINavigationControllerDelegate
-// 将要显示控制器
-- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
-    // 判断要显示的控制器是否是自己
-    BOOL isShowHomePage = [viewController isKindOfClass:[self class]];
-    [self.navigationController setNavigationBarHidden:isShowHomePage animated:YES];
-}
+//#pragma mark - UINavigationControllerDelegate
+//// 将要显示控制器
+//- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
+//    // 判断要显示的控制器是否是自己
+//    BOOL isShowHomePage = [viewController isKindOfClass:[self class]];
+//    [self.navigationController setNavigationBarHidden:isShowHomePage animated:YES];
+//}
 
 -(void)initialization{
     [_PhoneNumberField setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
@@ -53,17 +53,8 @@
 }
 #pragma mark 登录按钮事件
 - (IBAction)login:(UIButton *)sender {
-//    NSString *Token=@"8YMf6HOsS5n72WcU3cByOrj0Ff25vOZrJpnSs2W+bX9iwl95tnrn4KDYZNuM5uNmgtbLlM6prhkkERkLv18L0g==";/*180*/
-    NSString *Token=@"oZA1HF+FkoBB9p5NMuLBSg4YBONcvqYqV+NEjKDDzVJM1mOL5ywUbvTFYeiDBuoGuQlNOgxqf7M=";/*160*/
-    [[RongyunImMethods sharedInstance] login:Token success:^(NSString *success) {
-        [self.navigationController.view removeFromSuperview];
-        FxxMainViewController *Main =[[FxxMainViewController alloc]init];
-        [UIApplication sharedApplication].keyWindow.rootViewController=Main;
-    } error:^(NSString *error) {
-        dispatch_sync(dispatch_get_main_queue(), ^{
-        });
-    }];
-}
+
+    }
 #pragma mark 注册按钮事件
 - (IBAction)RegBtn:(UIButton *)sender {
     FxxChoosetypeVc *Vc =[[FxxChoosetypeVc alloc]init];

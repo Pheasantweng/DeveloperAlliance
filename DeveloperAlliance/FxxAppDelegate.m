@@ -10,6 +10,7 @@
 #import "FxxLoginVC.h"
 #import "BaseNavigationController.h"
 #import "RongyunImMethods.h"
+#import "FxxMainViewController.h"
 @interface FxxAppDelegate ()
 
 @end
@@ -21,10 +22,9 @@
     // Override point for customization after application launch.
     
     [[RongyunImMethods sharedInstance]InitSDK];
-
-    FxxLoginVC *RootVc=[[FxxLoginVC alloc]init];
-    BaseNavigationController *NavRootNav =[[BaseNavigationController alloc]initWithRootViewController:RootVc];
-    self.window.rootViewController=NavRootNav;
+    FxxMainViewController *RootVc=[[FxxMainViewController alloc]init];
+//    BaseNavigationController *NavRootNav =[[BaseNavigationController alloc]initWithRootViewController:RootVc];
+    self.window.rootViewController=RootVc;
     [self.window makeKeyWindow];
     [self setNavigationAndTabarForGlobal];
     return YES;

@@ -11,6 +11,7 @@
 #import "FxxBBSViewController.h"
 #import "FxxPersonalcenterVC.h"
 #import "BaseNavigationController.h"
+#import "RongyunImMethods.h"
 @interface FxxMainViewController ()
 
 @end
@@ -20,6 +21,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    //    NSString *Token=@"8YMf6HOsS5n72WcU3cByOrj0Ff25vOZrJpnSs2W+bX9iwl95tnrn4KDYZNuM5uNmgtbLlM6prhkkERkLv18L0g==";/*180*/
+    NSString *Token=@"oZA1HF+FkoBB9p5NMuLBSg4YBONcvqYqV+NEjKDDzVJM1mOL5ywUbvTFYeiDBuoGuQlNOgxqf7M=";/*160*/
+    [[RongyunImMethods sharedInstance] login:Token success:^(NSString *success) {
+        
+    } error:^(NSString *error) {
+        dispatch_sync(dispatch_get_main_queue(), ^{
+        });
+    }];
+
     [self UserloadViewControllers];
     
     // Do any additional setup after loading the view.
